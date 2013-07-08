@@ -1,4 +1,4 @@
-#!/usr/bin/python2.6
+#!/usr/bin/env python
 
 # Simple script to send Bacula reports to Zabbix
 # Made by Pavel Selivanov <selivan5@yandex.ru>
@@ -11,10 +11,15 @@
 import sys, re, subprocess
 import datetime
 
+if sys.version_info>=(3,):
+    print "Need python version 2 to run. Tested with python 2.6"
+    quit(1)
+
+
 if len(sys.argv) < 3:
         print "Usage:"
         print sys.argv[0], " ZABBIX_SERVER HOSTNAME [CUSTOM_MESSAGE]"
-        quit(1)
+        quit(5)
 
 # some logging
 now=datetime.datetime.today()
