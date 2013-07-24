@@ -1,9 +1,10 @@
 #!/bin/bash
-[ -z "$1" ] && exit 1
+[ -z "$1" ] && echo "Usage: $0 window [command]" && exit 1
 #xdotool search --onlyvisible $1 windowraise windowfocus || $1 &
+[ -n "$2" ] && command=$2 || command=$1
 xdotool search --onlyvisible $1
 if [ $? -ne 0 ]; then
-  $1 &
+	$command &
 else
 	windows=$(xdotool search --onlyvisible $1)
 	for w in $windows; do
