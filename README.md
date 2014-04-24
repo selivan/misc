@@ -1,4 +1,4 @@
 misc
 ====
 
-Some unsorted stuff
+Some unsorted stuff. Issues is used to store different TODOs
